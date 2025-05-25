@@ -29,7 +29,7 @@ const EditRecord = () => {
             const response = await updateRecord(entry._id, data);
 
             if(response) {
-                router.push('/records');
+                router.push(`/records`);
             }
         } catch (error) {
             console.log(error);
@@ -37,9 +37,10 @@ const EditRecord = () => {
     }
 
     useEffect(() => {
+        // if (!router.isReady) return;
         const id = router.query.id;
         if(!id) {
-            router.push('/records');
+            router.push(`/records`);
             return;
         }
         handleGetRecord(id);
@@ -50,7 +51,7 @@ const EditRecord = () => {
     }
 
     return (
-        <RecordForm onSubmit={onSubmit} entry={defaultRecordValues}/>
+        <RecordForm onSubmit={onSubmit} entry={entry}/>
     )
 }
 

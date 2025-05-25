@@ -35,7 +35,7 @@ export const createRecord = async (entry) => {
 
         const data = await response.json();
 
-        return data;
+        return { _id: data.insertedId };
     } catch (error) {
         console.error(error);        
     }
@@ -73,3 +73,9 @@ export const deleteRecord = async (id) => {
         console.error(error);
     }
 }
+
+export const searchBooksByAuthor = async (authorName) => {
+    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${encodeURIComponent(authorName)}&orderBy=relevance&maxResults=9`);
+    const data = await response.json();
+    return data.items || [];
+};
