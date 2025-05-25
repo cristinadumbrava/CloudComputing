@@ -1,4 +1,3 @@
-** Nu am putut adăuga imagini aici in read.md, dar se pot găsi in proiectul word încărcat în platformă. **
 Proiect Cloud Computing – Crescent Library
 
 Coordonator științific:
@@ -22,9 +21,10 @@ VII.	REFERINȚE	18
 LINKURI
 
 Link video prezentare proiect YouTube - https://youtu.be/NYNA6h1osLw
+
 Link GitHub - https://github.com/cristinadumbrava/CloudComputing
+
 Link Vercel - https://cloud-computing-lyart.vercel.app/ 
-![CAPTURA10](https://github.com/user-attachments/assets/fb5451d6-3a57-4d34-afe6-a4b5b1de6cb2)
 
 I.	INTRODUCERE
 
@@ -46,7 +46,8 @@ III.	DESCRIERE API
 Aplicația este construită pe un sistem hibrid care combină servicii externe și infrastructură cloud pentru gestionarea și afișarea colecțiilor de cărți:
 •	Google Books API este sursa principală pentru căutarea și afișarea unui volum vast de cărți disponibile public online. API-ul oferă acces la metadatele cărților (titlu, autori, descriere, imagini, link-uri către paginile oficiale Google Books). Se realizează cereri de tip GET prin endpoint-ul utilizat în funcția de mai jos:
 
-![image](https://github.com/user-attachments/assets/557863e1-ae1c-4879-9c5a-b9733dc661fd)
+![image](https://github.com/user-attachments/assets/c93d85f4-ae80-4b44-9e0c-d9358f145f7c)
+
 
 Rezultatele sunt procesate în aplicație pentru a afișa doar cărțile care au copertă (thumbnail) pentru o experiență vizuală mai plăcută. Utilizatorii pot vedea informații de bază direct în interfață și pot accesa detalii suplimentare prin butonul Show More, care deschide o fereastră modală.
 •	MongoDB Atlas, o bază de date NoSQL găzduită în cloud, este utilizată pentru stocarea colecției personale de cărți. Această colecție este accesibilă doar prin operații protejate, care permit crearea, modificarea și ștergerea cărților. Operațiile CRUD sunt realizate prin endpoint-uri REST, folosind metode HTTP standard:
@@ -66,25 +67,32 @@ IV.	FLUX DE DATE
 Pentru testarea și verificarea corectitudinii cererilor HTTP (request) și răspunsurilor primite (response) în cadrul aplicației, am folosit Postman. Această unealtă permite simularea interacțiunii cu API-ul nostru prin diferite metode HTTP (GET, POST, PUT, DELETE), oferind un mod eficient de a inspecta datele transmise și primite. Astfel, am putut valida funcționalitatea endpoint-urilor, precum și autentificarea și autorizarea operațiilor protejate.
 Exemple de request / response
 	Request GET pentru afișarea cărților din colecția personală 
-![image](https://github.com/user-attachments/assets/0777b450-7021-4120-a680-ff9d53c4ec49)
+![image](https://github.com/user-attachments/assets/f6351bfa-0da0-4cbe-a646-7c843ee30413)
+
 
 	Request PUT pentru modificarea informațiilor unei cărți identificate prin id
-![image](https://github.com/user-attachments/assets/d96d59e2-5f33-4757-b030-b4b8851d23d1)
+![image](https://github.com/user-attachments/assets/63cccac9-1592-4e54-a4a1-61c773e23317)
+
 
 	Request GET pentru a valida actualizarea din requestul PUT
-![image](https://github.com/user-attachments/assets/3c1a22e6-765a-4321-bb63-4527b3e3729b)
+![image](https://github.com/user-attachments/assets/702c6184-1dea-4153-b6e4-ed974ced1ed9)
+
 
 	Request POST pentru adăugarea unei noi cărți în colecția personală
-![image](https://github.com/user-attachments/assets/3fe93559-a65e-45fd-a690-ac5f5f8fab1f)
+![image](https://github.com/user-attachments/assets/97374581-17bf-49bc-9534-d424be4a25ab)
+
 
 	Request GET pentru afișarea cărții nou introduse
-![image](https://github.com/user-attachments/assets/f6c45017-4477-44a5-a0b9-a7896e2281d5)
+![image](https://github.com/user-attachments/assets/41182af7-2866-4301-b5df-f2b5369f1ce5)
+
 
 	Request DELETE pentru a șterge o carte dorită în funcție de id-ul de identificare
-![image](https://github.com/user-attachments/assets/ac53af9d-e6f3-487b-a200-574f2bb30291)
+![image](https://github.com/user-attachments/assets/4dbfbeb8-143d-4b70-8796-bee407d09a9f)
+
 
 	Request GET pentru a verifica dacă mai există în colecția personală cartea ștearsă prin requestul DELETE
-![image](https://github.com/user-attachments/assets/acd1c55f-41c8-45e3-9fde-8d5a9dd5388c)
+![image](https://github.com/user-attachments/assets/f1ae7fe7-dfb3-443d-a64c-85cab65c7191)
+
 
 Metode HTTP
 Aplicația respectă principiile arhitecturii REST și folosește următoarele metode HTTP pentru a permite interacțiunea cu resursele (cărțile din colecție):
@@ -107,17 +115,20 @@ V.	CAPTURI APLICAȚIE
 ![image](https://github.com/user-attachments/assets/9255f062-58d0-4a19-b2af-f6cb9fa57f32)
 
 În momentul în care se accesează butonul de My library, utilizatorul este direcționat către secțiunea My Personal Book Collection, unde este afișată întreaga colecție personală de cărți. Această pagină utilizează date stocate într-o bază de date MongoDB și permite afișarea detaliilor despre fiecare carte, precum titlul, autorul și descrierea. Este zona dedicată gestionării colecției proprii, de unde pot fi efectuate operații de căutare după titlu, adăugare, modificare sau ștergere – acțiuni protejate prin autentificare cu parolă.
-![image](https://github.com/user-attachments/assets/081180cb-f105-4924-8d27-dd1b1c2003f6)
+![image](https://github.com/user-attachments/assets/a9c69f0d-270a-435e-877e-86ffcf9c9047)
 
 Atunci când utilizatorul dorește să adauge o nouă carte în colecția personală, este afișată o fereastră de tip popup care solicită mai întâi introducerea unei parole de administrator.
-![image](https://github.com/user-attachments/assets/5324b4a8-2ecf-406c-a7bf-60bb284f1a70)
+![image](https://github.com/user-attachments/assets/12a236ec-d26a-43ad-9b58-cb8e35e47a7b)
+
 
 După validarea parolei, utilizatorul are acces la un formular unde poate introduce informațiile esențiale despre carte: titlu, autor, descriere. Această abordare oferă un nivel de securitate simplu, dar eficient, pentru o aplicație destinată gestionării personale a datelor.
-![image](https://github.com/user-attachments/assets/2cef3376-2e6c-40f7-b74f-3521e3c0b30b)
+![image](https://github.com/user-attachments/assets/7c041f05-d5f5-4b06-8e44-e993c79a04d8)
+
 
 În cazul funcșionalităților de ștergere și modificare se procedează în același mod, prin introducerea parolei în fereastra de pop-up pentru autorizarea utilizatorului.
 Aplicația oferă utilizatorului și posibilitatea de a explora o colecție extinsă de cărți prin intermediul unui buton dedicat: Online Library. Utilizatorul este redirecționat către o secțiune unde poate căuta cărți după numele autorului, folosind serviciul extern Google Books API. Rezultatele sunt returnate într-o ordine determinată de relevanță și popularitate, conform algoritmilor de clasificare utilizați de Google Books API.
-![image](https://github.com/user-attachments/assets/0fd00971-c9b5-44d2-828e-389efb43534d)
+![image](https://github.com/user-attachments/assets/ac5ae719-24d1-442f-9198-18d79e430f13)
+
 
 Această integrare permite accesul rapid la o bază de date vastă și actualizată, oferind informații precum: titlul cărții, autorii, descrierea și imaginea coperții. Pentru o experiență cât mai completă, fiecare carte din rezultate are opțiunea „Show More”, care deschide un pop-up cu descrierea în variantă integrală, dar și un link către pagina oficială Google Books, unde pot fi consultate informații extinse sau se poate achiziționa cartea.
 ![image](https://github.com/user-attachments/assets/b6510cf9-0bbb-4dc1-afe4-b6fb7b38839f)
