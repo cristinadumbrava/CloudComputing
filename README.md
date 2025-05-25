@@ -111,7 +111,7 @@ Aplicația respectă principiile arhitecturii REST și folosește următoarele m
 
 Autentificare și autorizare servicii utilizate 
 În cadrul acestei aplicații web, autentificarea și autorizarea au fost implementate într-un mod simplu și eficient, având ca scop protejarea operațiilor sensibile (creare, actualizare, ștergere) asupra colecției personale de cărți.
-În locul unui sistem complex de autentificare cu conturi de utilizator, s-a optat pentru o metodă locală de protecție. Accesul la funcțiile de tip Add Book, Update și Delete este restricționat printr-un popup de autentificare cu parolă. Această fereastră apare atunci când utilizatorul dorește să efectueze modificări în colecția personală.
+În locul unui sistem complex de autentificare cu conturi de utilizator, s-a optat pentru o metodă locală de protecție. Accesul la funcțiile de tip Add Book, Update și Delete este restricționat printr-un pop-up de autentificare cu parolă. Această fereastră apare atunci când utilizatorul dorește să efectueze modificări în colecția personală.
 Parola este introdusă într-un input form, iar dacă valoarea acesteia corespunde unei parole predefinite (ex: "admin123"), atunci se acordă accesul temporar la funcționalitățile administrative. Parola nu este salvată în bază de date și nu este transmisă prin rețele externe — protecția este gestionată local în aplicație.
 Astfel, se previn modificările neautorizate ale colecției personale și se asigură integritatea datelor, întrucât doar proprietarul aplicației are acces la modificări, putându-se observa o separare clară între funcțiile publice (căutare prin Google Books API, afișare colecție) și cele private (editarea datelor).
 
@@ -126,7 +126,7 @@ V.	CAPTURI APLICAȚIE
 
 ![image](https://github.com/user-attachments/assets/a9c69f0d-270a-435e-877e-86ffcf9c9047)
 
-Atunci când utilizatorul dorește să adauge o nouă carte în colecția personală, este afișată o fereastră de tip popup care solicită mai întâi introducerea unei parole de administrator.
+Atunci când utilizatorul dorește să adauge o nouă carte în colecția personală, este afișată o fereastră de tip pop-up care solicită mai întâi introducerea unei parole de administrator.
 
 ![image](https://github.com/user-attachments/assets/12a236ec-d26a-43ad-9b58-cb8e35e47a7b)
 
