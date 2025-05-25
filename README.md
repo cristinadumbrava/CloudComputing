@@ -1,8 +1,5 @@
 Proiect Cloud Computing – Crescent Library
 
-Coordonator științific:
-Conf. Univ. Dr. TIMOFTE Carmen Manuela
-
 Student:
 DUMBRAVĂ Cristina-Georgiana
 1132
